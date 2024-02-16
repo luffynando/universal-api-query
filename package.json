@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/luffynando/universal-api-query.git"
+    "url": "git+https://github.com/luffynando/universal-api-query.git"
   },
   "bugs": {
     "url": "https://github.com/luffynando/universal-api-query/issues"
