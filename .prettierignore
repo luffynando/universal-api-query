@@ -1,0 +1,9 @@
+node_modules
+coverage
+dist
+
+# Ignore artifacts:
+.pnpm-store
+.husky
+pnpm-lock.yaml
+**/*.md

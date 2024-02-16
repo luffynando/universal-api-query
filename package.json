@@ -1,0 +1,85 @@
+{
+  "name": "universal-api-query",
+  "version": "1.0.0",
+  "description": "💎 Elegant and simple way to build requests for REST API",
+  "keywords": [
+    "api",
+    "rest",
+    "query",
+    "builder",
+    "laravel"
+  ],
+  "private": false,
+  "author": {
+    "name": "Fernando Isidro Luna",
+    "email": "luffynando@gmail.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "is-ci || husky",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "build": "rimraf dist && tsc",
+    "release": "pnpm run build && pnpm changeset publish",
+    "lint": "xo --fix",
+    "lint:check": "xo",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "imports": {
+    "#src/*": "./src/*.js",
+    "#tests/*": "./tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luffynando/universal-api-query.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luffynando/universal-api-query/issues"
+  },
+  "homepage": "https://github.com/luffynando/universal-api-query#readme",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@types/is-ci": "^3.0.4",
+    "@types/qs": "^6.9.11",
+    "@vitest/coverage-istanbul": "^1.2.2",
+    "axios": "^1.6.7",
+    "axios-mock-adapter": "^1.22.0",
+    "husky": "^9.0.10",
+    "is-ci": "^3.0.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2",
+    "xo": "^0.57.0"
+  },
+  "dependencies": {
+    "defu": "^6.1.4",
+    "dotprop": "^1.2.1",
+    "dset": "^3.1.3",
+    "object-to-formdata": "^4.5.1",
+    "qs": "^6.11.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "paths": {
+      "#src/*": ["./src/*.js"]
+    }
+  },
+  "include": ["src/**/*"]
+}
