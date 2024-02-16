@@ -10,6 +10,7 @@ import {
   type QueryPromise,
   type HttpPromise,
   type StringifyOptions,
+  type PaginationResponse,
 } from './contracts/universal_api_query';
 
 export default abstract class Model extends StaticModel {
@@ -282,6 +283,11 @@ export default abstract class Model extends StaticModel {
     return this.first().then(
       (response) => ((response as unknown as { data?: Model }).data ?? response) as this,
     );
+  }
+
+  public async $paginate<Y = { total: number }>(): Promise<PaginationResponse<this, Y>> {
+    const allResponse = await this.$all();
+    return (allResponse.at(0) ?? {}) as PaginationResponse<this, Y>;
   }
 
   public async find(identifier: number | string): QueryPromise<this> {

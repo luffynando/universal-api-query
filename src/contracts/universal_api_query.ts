@@ -49,6 +49,11 @@ export type HttpPromise<T = unknown> = Promise<HttpResponse<T>>;
 
 export type QueryPromise<T> = Promise<T | HttpResponse<T>>;
 
+export type PaginationResponse<T, Y = { total: number }> = {
+  meta: Y;
+  data: T[];
+};
+
 // eslint-disable-next-line unicorn/prevent-abbreviations
 type DefaultEncoder = (str: unknown, defaultEncoder?: unknown, charset?: string) => string;
 
